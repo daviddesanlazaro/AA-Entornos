@@ -10,6 +10,7 @@ package com.sanvalero.cine;
 
 public class Application {
     public static void main(String[] args) {
-
+        Cine cine = new Cine();
+        cine.ejecutar();
     }
 }
