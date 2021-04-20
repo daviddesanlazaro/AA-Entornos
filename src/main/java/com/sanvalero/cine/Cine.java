@@ -125,8 +125,11 @@ public class Cine {
         int turno = Math.round(introducirFloat(true, false));
         System.out.println("Introduce el salario del trabajador en euros");
         float salario = introducirFloat(false, false);
+        System.out.println("Introduce el numero de sala");
+        String nombreSala = teclado.nextLine();
 
-        trabajador = new Trabajador(nombre, dni, email, turno, salario);
+        Sala sala = new Sala(nombreSala, 0, null, 0, 0);
+        trabajador = new Trabajador(nombre, dni, email, turno, salario, sala);
 
         return crearTrabajador = true;
     }
@@ -138,6 +141,7 @@ public class Cine {
             System.out.println("Email: " + trabajador.getEmail());
             System.out.println("Turno: " + trabajador.getTurno());
             System.out.println("Salario: " + trabajador.getSalario() + " €");
+            System.out.println("Nombre de la sala: " + trabajador.getSala().getNombre());
         } else {
             System.out.println("No hay ningún trabajador");
         }

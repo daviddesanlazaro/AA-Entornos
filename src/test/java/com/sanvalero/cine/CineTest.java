@@ -31,12 +31,14 @@ public class CineTest {
 
     @Test
     public void testConstructorTrabajador() {
-        Trabajador trabajador = new Trabajador ("Nombre del trabajador", "123456789A", "correo@email.com", 2, (float) 1265.4);
+        Sala sala = new Sala("Nombre de la sala", 10, "Zaragoza, 1", 80, (float)7.5);
+        Trabajador trabajador = new Trabajador ("Nombre del trabajador", "123456789A", "correo@email.com", 2, (float) 1265.4, sala);
         assertEquals("Nombre del trabajador", trabajador.getNombre());
         assertEquals("123456789A", trabajador.getDni());
         assertEquals("correo@email.com", trabajador.getEmail());
         assertEquals(2, trabajador.getTurno());
         assertEquals((float) 1265.4, trabajador.getSalario());
+        assertEquals("Nombre de la sala", trabajador.getSala().getNombre());
     }
 
     @Test
@@ -61,9 +63,10 @@ public class CineTest {
 
     @Test
     public void testTrabajadorEquals() {
-        Trabajador trabajador1 = new Trabajador ("Nombre del trabajador 1", "123456789A", "correo1@email.com", 1, (float) 1265.4);
-        Trabajador trabajador2 = new Trabajador ("Nombre del trabajador 2", "987654321A", "correo2@email.com", 2, (float) 1140.2);
-        Trabajador trabajador3 = new Trabajador ("Nombre del trabajador 1", "123456789A", "correo1@email.com", 1, (float) 1265.4);
+        Sala sala = new Sala("Nombre de la sala", 10, "Zaragoza, 1", 80, (float)7.5);
+        Trabajador trabajador1 = new Trabajador ("Nombre del trabajador 1", "123456789A", "correo1@email.com", 1, (float) 1265.4, sala);
+        Trabajador trabajador2 = new Trabajador ("Nombre del trabajador 2", "987654321A", "correo2@email.com", 2, (float) 1140.2, sala);
+        Trabajador trabajador3 = new Trabajador ("Nombre del trabajador 1", "123456789A", "correo1@email.com", 1, (float) 1265.4, sala);
         assertFalse(trabajador1.equals(trabajador2));
         assertTrue(trabajador1.equals(trabajador3));
         assertFalse(trabajador2.equals(trabajador3));
