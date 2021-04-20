@@ -125,7 +125,7 @@ public class Cine {
         int turno = Math.round(introducirFloat(true, false));
         System.out.println("Introduce el salario del trabajador en euros");
         float salario = introducirFloat(false, false);
-        System.out.println("Introduce el numero de sala");
+        System.out.println("Introduce el nombre de sala");
         String nombreSala = teclado.nextLine();
 
         Sala sala = new Sala(nombreSala, 0, null, 0, 0);
