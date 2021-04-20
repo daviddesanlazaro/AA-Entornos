@@ -7,16 +7,18 @@ public class Trabajador {
     private String email;
     private int turno;
     private float salario;
+    private Sala sala;
 
 
     // Constructor
 
-    public Trabajador(String nombre, String dni, String email, int turno, float salario) {
+    public Trabajador(String nombre, String dni, String email, int turno, float salario, Sala sala) {
         this.nombre = nombre;
         this.dni = dni;
         this.email = email;
         this.turno = turno;
         this.salario = salario;
+        this.sala = sala;
     }
 
     // Getters
@@ -41,6 +43,10 @@ public class Trabajador {
         return salario;
     }
 
+    public Sala getSala() {
+        return sala;
+    }
+
     // Setters
 
     public void setNombre(String nombre) {
@@ -61,6 +67,10 @@ public class Trabajador {
 
     public void setSalario(float salario) {
         this.salario = salario;
+    }
+
+    public void setSala(Sala sala) {
+        this.sala = sala;
     }
 
     @Override
